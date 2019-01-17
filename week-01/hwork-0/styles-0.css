@@ -1,0 +1,47 @@
+
+.title h1{
+    
+    color: rgb(114, 84, 84);}
+.title h2{
+        color: rgb(144, 155, 105);
+    }
+
+.header
+{
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    color: wheat;
+}
+li a{ 
+    display:block;
+    color: white;
+    text-align: center;
+    padding: 24px;
+    text-decoration: none;
+ }
+
+li { float: right;} 
+
+.header #logo{ 
+    position: absolute;
+    height: auto;
+    width: 20px;
+    top: 8px;
+    left:16;
+    text-align: center;
+    
+    padding: 24px;   
+}
+
+li :hover{ background-color: black; }
+p{
+    text-align: center;
+}
+.title{
+    width: center;
+}
+h1{
+    text-align: center;
+}
