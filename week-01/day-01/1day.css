@@ -1,0 +1,46 @@
+body{
+background-color: rgb(219, 235, 228);
+}
+.navbar{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(66, 83, 78);
+    padding-left: 150px;
+    border-color: black;
+    height: 50px;
+    
+}
+
+.text{
+    padding-left: 150px;
+}
+#border{
+    border-style: groove;
+    width: 15%;
+    color: rgb(175, 180, 178);
+}
+#border1{
+    
+    border-style: groove;
+    width: 50%;
+    color:black;
+}
+#submit{
+    border: 2px solid black;
+    border-radius: 12px;
+    text-align: center;
+    background-color: rgb(111, 117, 115);
+    width: 5%;
+}
+.title2{
+
+    border-style: groove;
+    width: 75%;
+    margin-bottom: 15px;
+    padding: 0;
+
+}
+
+.title2 h2, h4{
+margin: 4px ;
+}
