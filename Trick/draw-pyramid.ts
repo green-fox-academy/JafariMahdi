@@ -16,16 +16,15 @@ let s: string = '';
 let d: string ='*';
 
 for(let i =0; i < n; i++ ){
-    for(let b = 0; b < 4 -i ; b++){
+    for(let b = 0; b < n-i ; b++){
         s +=' ';
     }
-    if (i == 0){
-        d += ''
-    }else{
-        d += '**'
+    for (let j = 0; j < i;j++){
+        d +='**';
+    console.log(s,d);
+    
     }
     console.log(s,d);
-    s='';
     
 }
 
