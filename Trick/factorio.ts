@@ -12,3 +12,4 @@ function factorio(a: number): number{
     return result;
 }
 console.log(factorio(4));
+//
