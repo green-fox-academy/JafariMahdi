@@ -20,7 +20,7 @@ function getNameAndBalance(x) {
             console.log(out)
         }
     });
-}       getNameAndBalance(11234543);
+} getNameAndBalance(11234543);
 
 
 
@@ -33,22 +33,26 @@ function getNameAndBalance(x) {
 //
 // Log "404 - account not found" if any of the account numbers don't exist to the console.
 
-function transfers(a,b,c,d){
-    a.forEach(element=>{
-        let out: any= 0;
-        if((element.accountNumber === b) && (element.accountNumber === c )){
-            out.push(element.accountNumber);
-            //c += b.push(element.accountNumber);
-        //  console.log(d);
-            console.log('from',b ,'ámount',out , 'to', c);
-        }  else {
-            console.log( "404 - account not found");
-            
+function transfers(a, b, c, d) {
+    a.forEach(item => {
+        
+        if ((item.accountNumber === b) && (item.accountNumber === c)) {
+            let out: any = 0;
+
+            d.push(item.balance);
+            out = d;
+
+            console.log(b, c, out);
         }
+        else {
+            console.log("404 - account not found");
+        }
+
     })
 }
-console.log(transfers(accounts,43546731,23456311,12345));
- 
+
+transfers(accounts, 43546731, 23456311, 5204100071.23);
+
 
 
 

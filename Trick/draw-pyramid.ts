@@ -11,20 +11,21 @@ let lineCount: number = 4;
 // *******
 //
 // The pyramid should have as many lines as lineCount is
-let n: number= 4;
+
 let s: string = '';
 let d: string ='*';
 
-for(let i =0; i < n; i++ ){
-    for(let b = 0; b < n-i ; b++){
+for(let i =0; i < 4; i++ ){   // for width
+    for(let b = 0; b < 4 -i ; b++){   // for height
         s +=' ';
     }
-    for (let j = 0; j < i;j++){
-        d +='**';
-    console.log(s,d);
-    
+    if (i == 0){
+        d += ''
+    }else{
+        d += '**'
     }
     console.log(s,d);
+    s='';
     
 }
 
