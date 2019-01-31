@@ -1,0 +1,4 @@
+Hey, whats up man ?
+this is secound line you know it. 
+this is third line 
+for the line four we have to use always 'utf-8' for make our txt readable !!

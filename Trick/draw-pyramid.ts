@@ -15,8 +15,8 @@ let lineCount: number = 4;
 let s: string = '';
 let d: string ='*';
 
-for(let i =0; i < 4; i++ ){   // for width
-    for(let b = 0; b < 4 -i ; b++){   // for height
+for(let i =0; i < 4; i++ ){             // for width
+    for(let b = 0; b < 4 -i ; b++){             // for height
         s +=' ';
     }
     if (i == 0){
