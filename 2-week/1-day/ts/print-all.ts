@@ -7,12 +7,6 @@
 
 let integers: number[] = [4, 5, 6, 7];
 
-integers.forEach(function (i) {
-    console.log(i);
-});8 
-
-/*for (let i = 0; i < integers.length; i++) {  
-    i -= 1 ;                                        //  infinite loop, never gonna stop this loop
-    console.log(integers[i]);
-
-}  */        
+integers.forEach(function (value) {
+    console.log(value);
+});

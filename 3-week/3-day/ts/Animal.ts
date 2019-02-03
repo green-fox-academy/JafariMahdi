@@ -18,7 +18,7 @@ class Animal {
         this.hangur = 50;
         this.thirsty = 50;
     }
-    eat(){                                  // we make function thats working whit our new object and call for change them 
+    eat(){                      // we make function thats working whit our new object and call for change them 
         this.hangur --;
     }
     drink(){

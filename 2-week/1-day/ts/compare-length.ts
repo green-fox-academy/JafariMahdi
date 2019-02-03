@@ -5,12 +5,13 @@
 //    with the following content: `[4, 5]`
 // -  Log to the console if `secondList` has more elements than `firstList`
 
-let firstList: number[]= [1,2,3];
-let secondList: number[]=[4,5];
+let firstList: number[] = [];
+let secondList: number[] = [];
+
 
 if(firstList.length< secondList.length){
-    console.log(secondList);
+console.log(secondList);
 } else {
-    console.log(firstList);
+console.log(firstList);
     
 }

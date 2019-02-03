@@ -2,7 +2,7 @@
 //    that returns it's input's factorial
 
 
-function factorio(a: number): number{
+function factorio(a){
     let result = 1 
     for (let i = 1; i <= a ; i++){
         console.log(result, i);

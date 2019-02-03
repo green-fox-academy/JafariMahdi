@@ -8,7 +8,7 @@ let numList: number[]=[1,2,3,4,5];
 
 
 let newList = numList.map(function(item){
-//  numList[2] += 4; in this case if you put += some number  => is going to power by 2 that number + pervios number ????
+
     numList[2] = 4;     // just give the new value for it
     return item;
 

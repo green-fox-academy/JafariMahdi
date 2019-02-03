@@ -8,27 +8,18 @@
 
 // You can use the already created pokemon files.
 
-
-class pokman{
+export class Pokemon {
     name: string;
     type: string;
+    effectiveAgainst: string;
 
-    constructor(name: string, input:string){
-        this.name= name;
-        this.type = input;
+    constructor(name: string, type: string, effectiveAgainst: string) {
+        this.name = name;
+        this.type = type;
+        this.effectiveAgainst = effectiveAgainst;
     }
 
-isEffectiveAginest(x){
-    if (x === 'fire'){
-        this.type = 'fire';
-    }if(x === 'water'){
-        this.type= 'water';
+    isEffectiveAgainst(pokemon: Pokemon): boolean {
+        return this.effectiveAgainst === pokemon.type;
     }
 }
-
-}  let mypok = new pokman('cloud','fire');
-console.log(mypok);
-let pok2 = new pokman('mahdi','water');
-console.log(pok2);
-
-

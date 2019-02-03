@@ -19,7 +19,7 @@ class counter{
     addnumber(x){
        return  this.mynumber += x;
     }
-    add(){
+    addOne(){
        return  this.mynumber ++;
     }
     get(){
@@ -30,5 +30,12 @@ class counter{
     }
 }
 let secoundnumber = new counter;
-console.log(secoundnumber.add());
+console.log(secoundnumber.addOne());
 console.log(secoundnumber.addnumber(23));
+
+let first = new counter;
+console.log(first.get());
+console.log(first.addnumber(12));
+console.log(first.reset);
+
+

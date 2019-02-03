@@ -9,7 +9,7 @@
 // a yellow with green text: "Superb!"
 
 class PostIt {
-    backgroundColor: string;            // 
+    backgroundColor: string;            
     text: string;
     textColor: string;
 
@@ -18,6 +18,10 @@ class PostIt {
         this.text = t;
         this.textColor = tx;
     }
+
+  changebakcgrand(x){  // <= make function for the change color for the varible
+    this.backgroundColor = x;
+  }  
 }
 
 let Idea = new PostIt('orange', 'Idea', 'blue');
@@ -25,3 +29,6 @@ let Awesome = new PostIt('pink', 'Awsome', 'blue');
 let Superb = new PostIt('yellow', 'Superb!', 'green');
 
 console.log(Awesome);
+Awesome.changebakcgrand('black');   // <= use function and change the color for the Awesome
+console.log(Awesome);
+
