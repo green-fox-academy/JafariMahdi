@@ -9,13 +9,14 @@ const accounts: any[] = [
 // Create function that returns the name and balance of cash on an account in a list
 // getNameAndBalance(11234543);
 // should return: ['Igor', 203004099.2]
+
 function getNameAndBalance(x) {
-    accounts.forEach(element => {
-        if (element.accountNumber === x) {
+    accounts.forEach(value => {
+        if (value.accountNumber === x) {
 
             let out: any[] = [];                    // make free varible for push the other information there and then call easily
-            out.push(element.clientName);
-            out.push(element.balance);                  // push into the new varible
+            out.push(value.clientName);
+            out.push(value.balance);                  // push into the new varible
 
             console.log(out)
         }
@@ -33,25 +34,26 @@ function getNameAndBalance(x) {
 //
 // Log "404 - account not found" if any of the account numbers don't exist to the console.
 
-function transfers(a, b, c, d) {
-    a.forEach(item => {
-        
-        if ((item.accountNumber === b) && (item.accountNumber === c)) {
-            let out: any = 0;
+function transfers(account, from_account, to_account, amount) {
+    account.forEach(value => {
 
-            d.push(item.balance);
-            out = d;
+        if (value.accountNumber === from_account) {
+            value.balance -= amount;
+            if (value.accountNumber === to_account) {
+                value.balance += amount;
+            }
 
-            console.log(b, c, out);
+            console.log(account, from_account, to_account, amount);
         }
         else {
             console.log("404 - account not found");
         }
-
     })
 }
 
-transfers(accounts, 43546731, 23456311, 5204100071.23);
+transfers(accounts, 43546731, 23456311, 500.0);
+console.log(accounts);
+
 
 
 
