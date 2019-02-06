@@ -35,16 +35,18 @@ function getNameAndBalance(x) {
 // Log "404 - account not found" if any of the account numbers don't exist to the console.
 
 function transfers(account, from_account, to_account, amount) {
-    account.forEach(value => {
+    account.forEach(function (value) {
 
         if (value.accountNumber === from_account) {
             value.balance -= amount;
-            if (value.accountNumber === to_account) {
-                value.balance += amount;
-            }
-
-            console.log(account, from_account, to_account, amount);
+            return ()
         }
+        if (value.accountNumber === to_account) {
+            value.balance += amount;
+        }
+
+        console.log(account, from_account, to_account, amount);
+        
         else {
             console.log("404 - account not found");
         }
