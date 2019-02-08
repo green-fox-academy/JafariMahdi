@@ -1,21 +1,23 @@
 'use strict';
 
-class Garden{
-    color:string;
-    water:number;
-    watering: number;
-    
+class Garden {
+    plane: string[];
+    waterlevel: number;
 
-    constructor(color:string,water:number,watering:number){
-        this.color = color;
-        this.water = water;
-        this.watering= watering;
+
+
+    constructor(plane: string[], water: number) {
+        this.plane = plane;
+        this.waterlevel = water;
     }
 
 
-     thirsty():any{
-       // console.log(`The ${});
-        
+    thirsty(): any {
+        if (this.waterlevel < 5) {
+           return this.waterlevel += 
+        }
+
+
     }
 }
-export{Garden};
+export { Garden };
