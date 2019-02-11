@@ -1,16 +1,28 @@
-'use strict ';
 
-class plant{
+class Flower {
+    water: number;
 
-color:string;
-water:number;
-watering: number;
-
-constructor(color:string,water:number,watering:number){
-    this.color = color;
-    this.water = water;
-    this.watering= watering;
+    constructor(water) {
+        this.water = water;
+    }   
 }
 
 
+class Garden{
+    plant: Flower[] = [];
+
+    constructor(){}
+
+    addflower(f1){
+        this.plant.push(f1);
+    }
 }
+
+
+let myflower = new Flower(5);
+console.log(myflower);
+
+let firstgarden = new Garden();
+firstgarden.addflower(myflower);
+
+console.log(firstgarden.plant[0].water);
