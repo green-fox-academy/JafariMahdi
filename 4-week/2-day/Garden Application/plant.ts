@@ -1,28 +1,52 @@
 
-class Flower {
-    water: number;
+export class plant {
+    color: string;
+    water: number = 0;
+    thirsty: boolean;
+    constructor() {
+        this.color = '';
+    }
 
-    constructor(water) {
-        this.water = water;
-    }   
+    needWater() { }
 }
 
+export class Flower extends plant {
+    absorb: number = 0.75;
+    thirsty: boolean;
+    constructor(color: string) {
+        super();
+        this.color = color;
+        this.water = 0;
+        this.thirsty= false;
+    }
 
-class Garden{
-    plant: Flower[] = [];
-
-    constructor(){}
-
-    addflower(f1){
-        this.plant.push(f1);
+    needWater() {
+        if (this.water < 5) {
+            this.thirsty = true;
+            return `the ${this.color} Flower is needs water`;
+        } else { 
+            this.thirsty = false;
+        }
     }
 }
 
+export class Tree extends plant {
+    absorb: number = 0.40;
+    thirsty: boolean;
+    
+    constructor(color: string) {
+        super()
+        this.color = color;
+        this.water = 0;
+        this.thirsty= false;
+    }
 
-let myflower = new Flower(5);
-console.log(myflower);
-
-let firstgarden = new Garden();
-firstgarden.addflower(myflower);
-
-console.log(firstgarden.plant[0].water);
+    needWater() {
+        if (this.water < 10) {
+            this.thirsty = true;
+            return `the ${this.color} Tree is needs water`;
+        } else {
+            this.thirsty = false;
+        }
+    }
+}

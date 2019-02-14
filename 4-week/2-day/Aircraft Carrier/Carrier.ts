@@ -1,6 +1,6 @@
 'use strict';
 class Carier{
-    listaircraft:any[];
+    listAirCraft:any[];
     allDamage:number;
     
 

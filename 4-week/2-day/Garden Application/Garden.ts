@@ -1,23 +1,44 @@
 'use strict';
+import {Flower,Tree, plant} from './plant';
 
 class Garden {
-    plane: string[];
-    waterlevel: number;
+    storePlane: plant[];
 
+    constructor() {
+        this.storePlane = [];
+    }
 
-
-    constructor(plane: string[], water: number) {
-        this.plane = plane;
-        this.waterlevel = water;
+    addToStore(x: plant){
+        this.storePlane.push(x);
     }
 
 
-    thirsty(): any {
-        if (this.waterlevel < 5) {
-           return this.waterlevel += 
-        }
-
-
+    Watering(x){
+        this.storePlane.forEach(Element =>{
+            if(this.thirsty.Element)
+          console.log(Element.needWater());
+        })
     }
+
 }
-export { Garden };
+
+let myflower = new Flower('blue');
+let myflower2 = new Flower('yellow');
+let mytree = new Tree('purple');
+let mytree2 = new Tree('orange');
+let mygarden = new Garden();
+
+mygarden.addToStore(myflower);
+mygarden.addToStore(myflower2);
+mygarden.addToStore(mytree);
+mygarden.addToStore(mytree2);
+
+mygarden.Watering();
+
+/*
+console.log(mygarden);
+console.log(mygarden.storePlane);
+console.log(mygarden.storePlane[0]);
+console.log(mygarden.storePlane[0].color);
+console.log(mygarden.storePlane[0].needWater());*/
+
