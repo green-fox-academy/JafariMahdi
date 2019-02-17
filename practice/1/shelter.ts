@@ -18,6 +18,66 @@
 // -  Dog's healing cost should be a random number between 1 and 8
 // -  Parrot's healing cost should be a random number between 4 and 10
 //
+
+
+class Utils {
+  public static getARandomNumber(min: number = 0, max: number = 1) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+}
+
+class Animal {
+  public name: string;
+  public isHealthy: boolean;
+  public healCost: number;
+  
+  public constructor(pName: string = 'Animal') {
+    this.name = pName;
+  }
+  
+  public heal(): void {
+    this.isHealthy = true;
+  }
+  
+  public isAdoptable(): boolean {
+    return this.isHealthy;
+  }
+  
+  public setHealingCost(min: number = 0, max: number = 1): void {
+    this.healCost = Utils.getARandomNumber(min, max);
+  }
+  
+  public toString(): string {
+    // if(this.isAdoptable() === true) {}
+    if (this.isHealthy === true) {
+      return `${this.name} is healthy, and adoptable`;
+    } else {
+      return `${this.name} is not healthy (${this.healCost}€), and not adoptable`;
+    }
+  }
+}
+
+class Cat extends Animal {
+  public constructor(pName: string = 'Cat') {
+    super(pName);
+    this.setHealingCost(0, 6);
+  }
+}
+
+class Dog extends Animal {
+  public constructor(pName: string = 'Dog') {
+    super(pName);
+    this.setHealingCost(1, 8);
+  }
+}
+
+class Parrot extends Animal {
+  public constructor(pName: string = 'Parrot') {
+    super(pName);
+    this.setHealingCost(4, 10);
+  }
+}
+
 // An AnimalShelter 
 // -  has a `budget`
 // -  has an `animals` list
@@ -39,88 +99,29 @@
 // The shelter starts with 50€ without any Animal and adopter
 // 
 
-
-class Utils {
-  public static getARandomNumber(min:number = 0, max:number = 1) {
-    return Math.floor(Math.random() * (max - min) + min);
-  }
-}
-
-class Animal {
-  public name: string;
-  public isHealthy: boolean;
-  public healCost: number;
-
-  public constructor(pName:string = 'Animal'){
-    this.name = pName;
-  }
-
-  public heal():void{
-    this.isHealthy = true;
-  }
-
-  public isAdoptable():boolean{
-    return this.isHealthy;
-  }
-
-  public setHealingCost(min:number = 0, max:number = 1):void {
-    this.healCost = Utils.getARandomNumber(min, max);
-  }
-
-  public toString():string{
-    // if(this.isAdoptable() === true) {}
-    if(this.isHealthy === true) {
-      return `${this.name} is healthy, and adoptable`;
-    } else {
-      return `${this.name} is not healthy (${this.healCost}€), and not adoptable`;
-    }
-  }
-}
-
-class Cat extends Animal {
-  public constructor(pName:string = 'Cat'){
-    super(pName);
-    this.setHealingCost(0, 6);
-  }
-}
-
-class Dog extends Animal {
-  public constructor(pName:string = 'Dog'){
-    super(pName);
-    this.setHealingCost(1, 8);
-  }
-}
-
-class Parrot extends Animal {
-  public constructor(pName:string = 'Parrot'){
-    super(pName);
-    this.setHealingCost(4, 10);
-  }
-}
-
 class AnimalShelter {
-  private budget:number;
-  private animals:Animal[];
-  private adopters:string[];
+  private budget: number;
+  private animals: Animal[];
+  private adopters: string[];
 
   public constructor(
-    pBudget:number = 50,
+    pBudget: number = 50,
   ) {
     this.budget = pBudget;
     this.animals = [];
     this.adopters = [];
   }
 
-  public rescue(animal:Animal):number{
+  public rescue(animal: Animal): number {
     this.animals.push(animal);
     return this.animals.length;
   }
 
-  public heal():number{
-    let someoneHealed:number = null;
+  public heal(): number {
+    let someoneHealed: number = null;
 
-    this.animals.forEach(function(animal:Animal, index:number):void{
-      if(
+    this.animals.forEach(function (animal: Animal, index: number): void {
+      if (
         someoneHealed === null && // we haven't healed any animal yet on this run
         animal.isHealthy !== true && // we can heal this particular / current animal
         this.budget >= animal.healCost // the shelter has enough money for treatment
@@ -134,15 +135,15 @@ class AnimalShelter {
     return someoneHealed === null ? 0 : 1;
   }
 
-  public addAdopter(name:string):void{
+  public addAdopter(name: string): void {
     this.adopters.push(name);
   }
 
-  public findNewOwner():void{
-    const randomAdopterNumber:number = this.getRandomAdopterNumber();
-    const randomAnimalName:string = this.getRandomAdoptableAnimalName();
+  public findNewOwner(): void {
+    const randomAdopterNumber: number = this.getRandomAdopterNumber();
+    const randomAnimalName: string = this.getRandomAdoptableAnimalName();
 
-    if(
+    if (
       randomAdopterNumber !== null &&
       randomAnimalName !== ''
     ) {
@@ -150,66 +151,66 @@ class AnimalShelter {
       this.removeAnimalByName(randomAnimalName);
     }
   }
-  
-  private getRandomAdopterNumber():number {
-    let ownerNumber:number = null;
-    
-    if(this.adopters.length > 0) {
+
+  private getRandomAdopterNumber(): number {
+    let ownerNumber: number = null;
+
+    if (this.adopters.length > 0) {
       ownerNumber = Utils.getARandomNumber(0, this.adopters.length - 1);
     }
 
     return ownerNumber;
   }
 
-  private getRandomAdoptableAnimalName():string{
-    let randomAdoptableAnimalNumber:number = null;
+  private getRandomAdoptableAnimalName(): string {
+    let randomAdoptableAnimalNumber: number = null;
 
-    const adoptAbleAnimals = this.animals.filter(function(currentAnimal:Animal):boolean{
+    const adoptAbleAnimals = this.animals.filter(function (currentAnimal: Animal): boolean {
       return currentAnimal.isAdoptable() === true;
     })
 
-    if(adoptAbleAnimals.length > 0) {
+    if (adoptAbleAnimals.length > 0) {
       randomAdoptableAnimalNumber = Utils.getARandomNumber(0, adoptAbleAnimals.length - 1)
     }
 
-    if(randomAdoptableAnimalNumber !== null) {
+    if (randomAdoptableAnimalNumber !== null) {
       return adoptAbleAnimals[randomAdoptableAnimalNumber].name;
     } else {
       return '';
     }
   }
 
-  private removeAdopterByIndex(index:number):void{
-    if(typeof this.adopters[index] !== 'undefined'){
+  private removeAdopterByIndex(index: number): void {
+    if (typeof this.adopters[index] !== 'undefined') {
       this.adopters.splice(index, 1);
     }
   }
 
-  private removeAnimalByName(name:string):void{
-    let animalNumberToRemove:number = null;
-    
-    this.animals.forEach(function(animal:Animal, index:number):void{
-      if(animal.name === name) {
+  private removeAnimalByName(name: string): void {
+    let animalNumberToRemove: number = null;
+
+    this.animals.forEach(function (animal: Animal, index: number): void {
+      if (animal.name === name) {
         animalNumberToRemove = index;
       }
     });
 
-    if(animalNumberToRemove !== null) {
+    if (animalNumberToRemove !== null) {
       this.animals.splice(animalNumberToRemove, 1);
     }
   }
 
-  public earnDonation(amount:number):number{
+  public earnDonation(amount: number): number {
     this.budget += parseInt(String(amount), 10);
     return this.budget;
   }
 
-  public toString():string{
+  public toString(): string {
     const budget = `${this.budget}€, There are ${this.animals.length} animal(s) and ${this.adopters.length} potential adopter(s)`;
-    const animals = this.animals.map(function(animal:Animal):string{
+    const animals = this.animals.map(function (animal: Animal): string {
       return animal.toString();
     });
-    
+
     return [budget].concat(animals).join('\n');
   }
 }

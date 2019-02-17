@@ -5,8 +5,8 @@
 // -  bonus for using the correct built in array method
 
 
-let integers: number[] = [4, 5, 6, 7];
+let integers: number[] = [4, 5, 6, 7, 8];
 
-integers.forEach(function (value) {
+integers.forEach(value => {
     console.log(value);
-});
+})

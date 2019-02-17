@@ -4,4 +4,4 @@ function greetByName(name: string) {
 }
 
 greetByName('Tojas');
-greetByName('Barbi', 'CEO');
+greetByName('Barbi');

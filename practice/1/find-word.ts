@@ -1,5 +1,12 @@
 'use strict';
 
+// There is a not so family friendly text in the `content.txt`
+// Create a function named familyFriendlizer that takes a filename and a list of strings as parameters
+// and remove all the given words from the file and returns the amount of the removed words.
+
+let offensiveWords: string[] = ['fuck', 'bloody', 'cock', 'shit', 'fucker', 'fuckstick', 'asshole', 'dick', 'piss'];
+
+
 const fs = require('fs');
 
 function readFile(path: string): string {
@@ -10,6 +17,7 @@ function readFile(path: string): string {
   }
 }
 
+
 function writeFile(path: string, content: string): boolean {
   try {
     fs.writeFileSync(path, content);
@@ -17,11 +25,8 @@ function writeFile(path: string, content: string): boolean {
   } catch (e) {
     return false;
   }
-}
-
-// There is a not so family friendly text in the `content.txt`
-// Create a function named familyFriendlizer that takes a filename and a list of strings as parameters
-// and remove all the given words from the file and returns the amount of the removed words.
+}  
+                              // FIND THE WORD IN A LIST
 
 function familyFriendlizer(path: string, listOfWords: string[]): number {
   const content = readFile(path).toLowerCase();
@@ -41,5 +46,4 @@ function familyFriendlizer(path: string, listOfWords: string[]): number {
   return wordCounter;
 }
 
-let offensiveWords: string[] = ['fuck', 'bloody', 'cock', 'shit', 'fucker', 'fuckstick', 'asshole', 'dick', 'piss'];
 console.log(familyFriendlizer('content.txt', offensiveWords)); // should print out 17

@@ -1,6 +1,7 @@
 
 export class plant {
     color: string;
+    absorb: number;
     water: number = 0;
     thirsty: boolean;
     constructor() {

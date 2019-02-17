@@ -5,10 +5,8 @@
 
 let animals: string[] = ['koal', 'pand', 'zebr'];
 
-animals = animals.map(function (value) {
-
-  return value += ('a');
-
+let newanimals: any[] = animals.map(value => {
+  value += 'a';
+  return value
 })
-
-console.log(animals);
+console.log(newanimals);

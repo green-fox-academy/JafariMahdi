@@ -80,29 +80,29 @@ class Bookshelf {
             }
         }
         );
-console.log(pagesByAuthor);   // for test
+        console.log(pagesByAuthor);   // for test
 
-            // sort object but first make to array for it 
+        // sort object but first make to array for it 
 
-        let sortedNumberOfPages : any []= Object.keys(pagesByAuthor)
-        .map(author => {
-            return {
-                author,
-                pages: pagesByAuthor[author]
-            };
-        })
-        .sort((a,b) => b.pages - a.pages);
+        let sortedNumberOfPages: any[] = Object.keys(pagesByAuthor)
+            .map(author => {
+                return {
+                    author,
+                    pages: pagesByAuthor[author]
+                };
+            })
+            .sort((a, b) => b.pages - a.pages);
         return sortedNumberOfPages[0].auther
     }
 }
 
 
- let bookshelf = new Bookshelf();
- bookshelf.addThisBook(new Softcover('jeeeee','heeeey',1999,999));
- bookshelf.addThisBook(new Softcover('pooiuu','llkjjhh',1969,689));
- bookshelf.addThisBook(new Softcover('errty','qqqqqqq',1769,779));
+let bookshelf = new Bookshelf();
+bookshelf.addThisBook(new Softcover('jeeeee', 'heeeey', 1999, 999));
+bookshelf.addThisBook(new Softcover('pooiuu', 'llkjjhh', 1969, 689));
+bookshelf.addThisBook(new Softcover('errty', 'qqqqqqq', 1769, 779));
 
 
- console.log(bookshelf.authorWhoWroteTheMostPages());
- 
+console.log(bookshelf.authorWhoWroteTheMostPages());
+
 

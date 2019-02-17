@@ -1,5 +1,5 @@
 'use strict';
-import {Flower,Tree, plant} from './plant';
+import { Flower, Tree, plant } from './plant';
 
 class Garden {
     storePlane: plant[];
@@ -8,15 +8,14 @@ class Garden {
         this.storePlane = [];
     }
 
-    addToStore(x: plant){
+    addToStore(x: plant) {
         this.storePlane.push(x);
     }
 
 
-    Watering(x){
-        this.storePlane.forEach(Element =>{
-            if(this.thirsty.Element)
-          console.log(Element.needWater());
+    Watering() {
+        this.storePlane.forEach(element => {
+            element.water += 40 * element.absorb;
         })
     }
 

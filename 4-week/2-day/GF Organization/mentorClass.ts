@@ -1,4 +1,5 @@
 'use strict';
+
 import { Person } from './personClass';
 
 class Mentor extends Person {

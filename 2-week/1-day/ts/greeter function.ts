@@ -5,7 +5,7 @@
 // -  Greet `name`
 
 
-var named : string = 'GreenFox';
+var nameToGreet : string = 'GreenFox';
 
 
 function greet(a : string): string{
@@ -18,5 +18,5 @@ function greet(a : string): string{
     return b;
 
 }
-let c = greet('hgdd');
+let c = greet(nameToGreet);
 console.log(c);
