@@ -3,12 +3,11 @@
 // The parameter should be a list.
 
 let far: string[] = ['bo', 'anacond', 'koal', 'pand', 'zebr'];
+// The output should be: 'boa', 'anaconda', 'koala', 'panda', 'zebra'
 
-function appendA(x) {
-    let newlist = x.map(value => value.concat('a'))
 
+function appendA(input: string[]) {
+    let newlist = input.map(value => value.concat('a'))
     return newlist
 }
 console.log(appendA(far));
-
-// The output should be: 'boa', 'anaconda', 'koala', 'panda', 'zebra'

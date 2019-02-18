@@ -10,20 +10,17 @@ const accounts: any[] = [
 // getNameAndBalance(11234543);
 // should return: ['Igor', 203004099.2]
 
-function getNameAndBalance(x) {
+function getNameAndBalance(accountN: number) {
+    let result: any[] = [];                    // make list for push all the information for call it easily
     accounts.forEach(value => {
-        if (value.accountNumber === x) {
-
-            let out: any[] = [];                    // make free varible for push the other information there and then call easily
-            out.push(value.clientName);
-            out.push(value.balance);                  // push into the new varible
-
-            console.log(out)
+        if (accountN === value.accountNumber) {
+            result.push(value.clientName);
+            result.push(value.balance);
+            console.log(result);
         }
     });
-} getNameAndBalance(11234543);
-
-
+} getNameAndBalance(43546731);
+console.log('-----------------------------------');
 
 // Create function that transfers an amount of cash from one account to another
 // it should have four parameters:
@@ -34,34 +31,28 @@ function getNameAndBalance(x) {
 //
 // Log "404 - account not found" if any of the account numbers don't exist to the console.
 
-function transfers(account, from_account, to_account, amount) {
-    account.forEach(function (value) {
 
-        if (value.accountNumber === from_account) {
-            value.balance -= amount;
-            return ()
-        }
-        if (value.accountNumber === to_account) {
-            value.balance += amount;
-        }
+let errorMessage: string = '404 - account not found';
 
-        console.log(account, from_account, to_account, amount);
-        
-        else {
-            console.log("404 - account not found");
+function transferAmount(accounts: any[], fromAccountNumber, toAccountNumber, amount): any {
+
+    if (!(accounts.indexOf(toAccountNumber) || accounts.indexOf(fromAccountNumber))) {
+        return errorMessage;
+    }
+    for (let i: number = 0; i < accounts.length; i++) {
+        if (accounts[i].accountNumber == fromAccountNumber) {
+            accounts[i].balance -= amount;
+
         }
-    })
+        else if (accounts[i].accountNumber == toAccountNumber) {
+            accounts[i].balance += amount;
+        }
+    }
 }
 
-transfers(accounts, 43546731, 23456311, 500.0);
+transferAmount(accounts, 43546731, 23456311, 500.0);
+
 console.log(accounts);
-
-
-
-
-
-
-
 
 
 

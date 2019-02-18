@@ -9,15 +9,15 @@ let shopItems: any[] = ['Cupcake', 2, 'Brownie', false];
 // Expected output: "Cupcake", "Croissant", "Brownie", "Ice cream"
 
 function sweets(input: any[]) {
-    let newlist = input.map(value => {
-        if (value === 2) {
-            return 'Croissant';
-        } if (value === false) {
-            return 'Ice cream';
-        } else {
-            return value;
-        }
-    })
-    return newlist;
+  let newlist = input.map(value => {
+    if (value === 2) {
+      return 'Croissant';
+    } if (value === false) {
+      return 'Ice cream';
+    } else {
+      return value;
+    }
+  })
+  return newlist;
 }
 console.log(sweets(shopItems));

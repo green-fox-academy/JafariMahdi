@@ -13,38 +13,26 @@ const students: any[] = [
 // - How many candies are owned by students altogether
 
 function student(list: any[]): any {
-    let box: number = 0;
-    for (let i = 0; i < list.length; i++) {
-        console.log(list[i]);
-
-        box += list[i].candies;
-        console.log(box);
-
-    } return box;
+    let candiesbox: number = 0;
+    list.forEach(value => {
+        candiesbox += value.candies;
+        console.log(value);
+    })
+    return 'whole candies owned by students is : ' + candiesbox;
 }
 console.log(student(students));
+console.log('---------------------------------');
 
 // create a function that takes a list of students and logs:
 // - The sum of the age of people who have less than 5 candies
 
-function names(list: any[], b) {
-
-    list.forEach(element => {
-        console.log(element[b]);
-    });
-} 
-names(students, 'name');
-
-
 let ages: number = 0;
-function sumage(c, d, e) {
-    c.forEach(element => {
-        if (element[d] < 5) {         // if statment for the check the value
-            ages += element[e];         // put the age in the new varible
+function sumage(list: any[]) {
+    list.forEach(value => {
+        if (value.candies < 5) {
+            ages += value.age;
         }
-        return ages;
     })
-
-} //console.log(sumage(students, 'candies', 'age'), ages);     // call the varible for log 
-
-
+    return 'the sum of age who has less than 5 candies is : ' + ages;
+}
+console.log(sumage(students));

@@ -3,7 +3,7 @@
 // Also, the URL is missing a crutial component, find out what it is and insert it too!
 
 
-let url: string = 'https//www.reddit.com/r/nevertellmethebots';   // we have some mistake in this text
+let url: string = 'https//www.reddit.com/r/nevertellmethebots';   
 
 let a = /https/gi ;//montion text in file you want change that  whit the** /,,,/gi** you have to use this100%
 
