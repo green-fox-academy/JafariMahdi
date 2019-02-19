@@ -32,6 +32,7 @@ class DiceSet {
         }
     }
 }
+//-------------------------------------------------------------------------------------------------------------
 
 // You have a `DiceSet` class which has a list for 6 dice
 // You can roll all of them with roll()
@@ -39,22 +40,18 @@ class DiceSet {
 // You can reroll with reroll()
 // Your task is to roll the dice until all of the dice are 6
 
-let diceSet = new DiceSet();
-console.log(diceSet.roll());
-console.log(diceSet.getCurrent());
 
-console.log("------------------");
 
-diceSet.reroll();
-console.log(diceSet.getCurrent());
+let myDiceSet = new DiceSet();
+console.log(myDiceSet.roll());
 
-console.log("------------------");
-
-console.log(diceSet.getCurrent(5));
-diceSet.reroll();
-console.log(diceSet.getCurrent());
-
-console.log("------------------");
-
-diceSet.reroll(4);
-console.log(diceSet.getCurrent());
+for(let i: number = 0; i < myDiceSet.dice.length; i++){
+  if(myDiceSet.dice[i] === 6){ 
+    continue 
+  }else {
+    while(myDiceSet.dice[i] !== 6){
+      myDiceSet.reroll(i);
+    }
+  }
+  console.log(myDiceSet.dice);
+}

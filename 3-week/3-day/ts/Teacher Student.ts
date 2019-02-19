@@ -1,48 +1,42 @@
 'use strict';
 
 // Create Student and Teacher classes
-// # Student
+//  -Student
 //     .learn()
 //     .question(teacher) -> calls the teachers answer method
-// # Teacher
+//  -Teacher
 //     .teach(student) -> calls the students learn method
 //     .answer()
 
+class Student {
 
-class student {
-    learn: number;
-
-    constracter() {
-        this.learn = 0;
-    }
-    point() {
-        this.learn += 5;
+    question(teacher: Teacher) {
+        console.log("Student: Can you tell me...?")
+        teacher.answer();
     }
 
-    qustion(askFromTeacher: teacher) {
-        askFromTeacher.answer;
+    learn() {
+        console.log("Student: Thank you! Now I understand.")
     }
+
 }
 
+class Teacher {
 
-
-class teacher {
-    name: string;
-
-    constructor(teachername) {
-        this.name = teachername;
-    }
-
-    teach(lesson: student) {
-        lesson.point();
+    teach(student: Student) {
+        console.log("Teacher: It is very important to....")
+        student.learn();
     }
 
     answer() {
-        console.log('answer');
-
+        console.log("Teacher: Have you googled it?")
     }
-
 }
-let mahdi = new student;
 
-console.log(mahdi.point);
+let joe = new Student();
+let mrsLockwood = new Teacher();
+
+joe.question(mrsLockwood);
+console.log("---------------------------")
+mrsLockwood.teach(joe);
+

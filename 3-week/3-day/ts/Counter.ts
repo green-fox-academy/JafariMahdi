@@ -1,41 +1,38 @@
 'use strict ';
 
-// Create a Counter class
-// which has an integer property
-// when creating it should have a default value 0 or we can specify it when creating
-// we can add(number) to increase the counter's value by a whole number
-// or we can add() without parameters just increasing the counter's value by one
-// and we can get() the current value as string
-// also we can reset() the value to the initial value
+// *Create a Counter class
+//   -which has an integer property
+//   -when creating it should have a default value 0 or we can specify it when creating
+//   -we can add(number) to increase the counter's value by a whole number
+//   -or we can add() without parameters just increasing the counter's value by one
+//   -and we can get() the current value as string
+//  -also we can reset() the value to the initial value
 
-class counter{
+class Counter {
 
-    mynumber:number;
+    mynum: number;
 
-    constructor(){
-        this.mynumber = 0;
+    constructor(num: number = 0) {
+        this.mynum = num;
     }
-
-    addnumber(x){
-       return  this.mynumber += x;
+    addnumber(add) {
+        this.mynum += add;
     }
-    addOne(){
-       return  this.mynumber ++;
+    addOne() {
+        this.mynum++;
     }
-    get(){
-        return this.mynumber.toString();
+    get() {
+        return this.mynum.toString();
     }
-    reset(){
-        return this.mynumber = 0 ;
+    reset() {
+        this.mynum = 0;
     }
 }
-let secoundnumber = new counter;
-console.log(secoundnumber.addOne());
-console.log(secoundnumber.addnumber(23));
+let first = new Counter;
+first.addnumber(6);
+console.log(first);
 
-let first = new counter;
 console.log(first.get());
-console.log(first.addnumber(12));
-console.log(first.reset);
+
 
 

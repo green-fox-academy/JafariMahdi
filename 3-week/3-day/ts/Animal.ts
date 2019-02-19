@@ -1,36 +1,39 @@
 ' use strict';
 
-// Create an Animal class
-// Every animal has a hunger value, which is a whole number
-// Every animal has a thirst value, which is a whole number
-// when creating a new animal object these values are created with the default 50 value
-// Every animal can eat() which decreases their hunger by one
-// Every animal can drink() which decreases their thirst by one
-// Every animal can play() which increases both by one
-
+// *Create an Animal class
+//   -Every animal has a hunger value, which is a whole number
+//   -Every animal has a thirst value, which is a whole number
+//   .when creating a new animal object these values are created with the default 50 value
+//   -Every animal can eat() which decreases their hunger by one
+//   -Every animal can drink() which decreases their thirst by one
+//   -Every animal can play() which increases both by one
 
 class Animal {
-    hangur: number;
-    thirsty: number;
-   
 
-    constructor() {
-        this.hangur = 50;
-        this.thirsty = 50;
+    hunger: number;
+    thirsty: number;
+
+    constructor(hunger: number = 50, thirsty: number = 50) {
+        this.hunger = hunger;
+        this.thirsty = thirsty;
     }
-    eat(){                      // we make function thats working whit our new object and call for change them 
-        this.hangur --;
+    eat() {
+        return this.hunger--;
     }
-    drink(){
-        this.thirsty --;
+    drink() {
+        return this.thirsty--;
     }
-    play(){
-        this.hangur ++;
-        this.thirsty ++;
+    play() {
+        return this.hunger++ , this.thirsty++;
     }
+
 }
-let dog = new Animal();                 // new object
-dog.eat();                          // call the function for the new object
-dog.eat();
-dog.hangur; // 48
-console.log(dog);
+let lion = new Animal;
+lion.play();
+console.log(lion);
+
+// vaghty parametre constructor meghdar dashte beshe az aval, mishavad parametr ra khli gozasht ya number delkhah ra dad
+
+let fox = new Animal(34, 56);
+console.log(fox);
+
