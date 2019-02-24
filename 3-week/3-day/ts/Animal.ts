@@ -18,13 +18,13 @@ class Animal {
         this.thirsty = thirsty;
     }
     eat() {
-        return this.hunger--;
+        this.hunger--;
     }
     drink() {
-        return this.thirsty--;
+         this.thirsty--;
     }
     play() {
-        return this.hunger++ , this.thirsty++;
+         this.hunger++ , this.thirsty++;
     }
 
 }

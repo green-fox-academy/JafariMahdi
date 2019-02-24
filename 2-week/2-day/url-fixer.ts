@@ -3,15 +3,15 @@
 // Also, the URL is missing a crutial component, find out what it is and insert it too!
 
 
-let url: string = 'https//www.reddit.com/r/nevertellmethebots';   
+let url: string = 'https//www.reddit.com/r/nevertellmethebots';
 
-let a = /https/gi ;//montion text in file you want change that  whit the** /,,,/gi** you have to use this100%
+let a = /https/gi;//montion text in file you want change that  whit the** /,,,/gi** you have to use this100%
 
-let b= url.replace(a,'http:');        // use  replace method in this line 
+let b = url.replace(a, 'http:');        // use  replace method in this line 
 
-let c=/bots/gi;      // for the end also  montion the file we wanna change that whit ** / '  ' / gi  ** in the end  
+let c = /bots/gi;      // for the end also  montion the file we wanna change that whit ** / '  ' / gi  ** in the end  
 
-let d = b.replace(c,'odds');
+let d = b.replace(c, 'odds');
 
 console.log(d);
 

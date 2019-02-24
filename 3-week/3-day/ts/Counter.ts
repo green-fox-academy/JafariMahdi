@@ -28,11 +28,14 @@ class Counter {
         this.mynum = 0;
     }
 }
-let first = new Counter;
+let first= new Counter;
+console.log(first);
 first.addnumber(6);
 console.log(first);
-
+first.reset()
 console.log(first.get());
+
+
 
 
 

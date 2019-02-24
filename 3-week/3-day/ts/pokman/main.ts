@@ -33,8 +33,3 @@ pokemonOfAsh.forEach(value => {
         console.log(`ash choice,${value.name}`);
     }
 });
-
-
-
-
-

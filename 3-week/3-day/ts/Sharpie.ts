@@ -25,6 +25,8 @@ class Sharpie {
 
 let sharpie1 = new Sharpie(' black', 400);
 console.log(sharpie1);
+sharpie1.use();
+console.log(sharpie1);
 
                          
 

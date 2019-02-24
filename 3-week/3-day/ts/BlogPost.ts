@@ -33,7 +33,7 @@ class BlogPost {
     }
 
 }
-let Lorem = new BlogPost('Lorem ipsum','John Doe','2000.5.04','Lorem ipsum dolor sit amet');
+let Lorem = new BlogPost('Lorem ipsum','John Doe','2000.05.04','Lorem ipsum dolor sit amet');
 console.log(Lorem);
 
 let wait = new BlogPost('Wait but why','Tim Urban','2010.10.10','A popular long-form, stick-figure-illustrated blog about almost everything');
