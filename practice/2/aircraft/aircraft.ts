@@ -1,73 +1,77 @@
+'use strict';
 
+class Aircraft {
+  type: string;
+  maxAmmo: number;
+  baseDamege: number;
+  storageAmmo: number;
+  allDamege: number;
 
-class Plane {
-  type;
-  maxAmmo;
-  baseDemmo;
-  ammoStorege;
-
-  constructor(type: string, max: number, base: number, ammo: number = 0) {
+  constructor(type: string) {
     this.type = type;
-    this.maxAmmo = max;
-    this.baseDemmo = base;
-    this.ammoStorege = ammo;
-  }
+    this.allDamege;
+    this.storageAmmo = 0;
+    if (type === 'F16') {
+      this.maxAmmo = 8;
+      this.baseDamege = 30;
+    }
+    else if (type === 'F35') {
+      this.maxAmmo = 12;
+      this.baseDamege = 50;
+    }
+    //--------------------------------------------------------
 
+  }
   fight() {
-    return this.ammoStorege * this.baseDemmo;
+    this.baseDamege * this.maxAmmo;
+    this.storageAmmo = 0;
   }
 
-  refril(input) {
-    if (input <= this.maxAmmo) {
-      this.maxAmmo = input;
-      return `your ammo is fill it and now is ${this.maxAmmo}`
-    } else {
-      this.ammoStorege = input - this.maxAmmo;
-      return `you fill the Ammo and your ammoStoreg is now ${this.ammoStorege}`
+  refill(input: number) {
+    if (input > this.maxAmmo) {
+      this.storageAmmo = this.maxAmmo;
+      this.allDamege = this.storageAmmo - this.baseDamege;
+      return input;
+    }
+    else {
+      this.storageAmmo = input
+      this.allDamege = this.baseDamege * this.storageAmmo;
+      input = 0;
+      return input;
     }
   }
-  gettype() {
-    return this.type;
+  gettype(){
+    return this.type.toString();
   }
-  getstatus() {
-    return `Type:${this.type}, Ammo: ${this.maxAmmo}, Base damage:${this.baseDemmo}, All damage:${this.ammoStorege}`
+
+  getstatus(){
+    return `Type ${this.type}, Ammo: ${this.maxAmmo}, Base Demage: ${this.baseDamege}, All Demage: ${this.allDamege} `
   }
-  isPriority() {
-    let result = this.type === 'F35' ? true : false;
-    return result;
-  }
-}
-
-
-
-
-class F16 extends Plane {
-
-  constructor(type: string = 'F16', max: number = 8, base: number = 30) {
-    super(type, max, base);
-
+  ispriority(){
+    return this.type ==='F35'? true : false;
   }
 }
+// ------------------------------------------------------------
 
-class F35 extends Plane {
+class Carrier{
 
-  constructor(type: string = 'F35', max: number = 12, base: number = 50) {
-    super(type, max, base);
+  aircrafts : Aircraft[];
+  stroeAmmo: number;
+  initalAmmo: number;
+  helthPoint: number;
 
+  constructor( initalAmmo,helthPoint){
+
+    this.initalAmmo = initalAmmo;
+    this.helthPoint = helthPoint;
   }
+//-------------------------------------------------------------
 
+add(input : Aircraft){
+this.aircrafts.push(input);
 }
 
-export { Plane,F16,F35}
-
-
-
-let agle = new F16;
-console.log(agle.gettype());
-console.log(agle.getstatus());
-console.log(agle.fight());
-console.log(agle.refril(20));
-console.log(agle.isPriority());
-
-
-
+fill(){
+  
+}
+}
