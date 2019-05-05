@@ -25,8 +25,8 @@ function writeFile(path: string, content: string): boolean {
   } catch (e) {
     return false;
   }
-}  
-                              // FIND THE WORD IN A LIST
+}
+// FIND THE WORD IN A LIST
 
 function familyFriendlizer(path: string, listOfWords: string[]): number {
   const content = readFile(path).toLowerCase();

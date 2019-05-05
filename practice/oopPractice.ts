@@ -16,8 +16,8 @@ class Book {
     getinfo(): string {
         return `the auther of this book is ${this.author} and the book is ${this.title} from year ${this.year}`
     }
-
 }
+
 //------------------------------------------------SoftCover Class------------------------
 
 class Softcover extends Book {
