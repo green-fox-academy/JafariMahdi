@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>Title</title>
-</head>
-
-<body>
-  <h1><%= name %></h1>
-</body>
-
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Welcome back, 
+      <% if (qs.name === undefined) {%>
+        Guest
+      <% } else { %>
+        <%= qs.name %>
+      <% } %></h1>
+  </body>
 </html>

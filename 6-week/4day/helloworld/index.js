@@ -9,7 +9,8 @@ app.set('view engine', 'ejs');     // here  view engine   tell going to views fi
 app.get('/', (req, res) => {
   // render `home.ejs`
   res.render('home', {      // render is method * tarjome mikonad * and send html file  to moshtary ya bazdid konandeh page
-    title: 'Hello World'
+    greeting: 'Hello',
+    name:'Mahdi'
   });
 });
 

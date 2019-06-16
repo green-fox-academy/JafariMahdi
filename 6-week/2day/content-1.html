@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Workshop: innerHTML, textContent</title>
+  </head>
+  <body>
+    <p class="apple">apple</p>
+    <p class="balloon">banana</p>
+    <p class="cat">car</p>
+    <p class="animals">goat rabbit <strong>cat</strong> dog</p>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Workshop: innerHTML, textContent</title>
-</head>
+    <!-- You can work in the html or in a separate js file. Like:
+      <script>
+      1)  Fill every paragraph with the last one's content.
+      2)  Do the same again, but you should keep the cat strong.
+      </script>
+      OR
+      <script src="content-1.js"></script> -->
 
-<body>
-  <p class="apple">apple</p>
-  <p class="balloon">banana</p>
-  <p class="cat">car</p>
-  <p class="animals">goat rabbit <strong>cat</strong> dog</p>
-
-  <!-- You can work in the html or in a separate js file. Like:
     <script>
-    1)  Fill every paragraph with the last one's content.
-    2)  Do the same again, but you should keep the cat strong.
+      'use strict';
+
+      // let content = document.querySelectorAll('p');
+      // for (let element = 0; element< content.length;element++) {
+      //   content[element -1]
+      // };
+
+      //console.log(document.getElementsByTagName('p')[0].innerText);
+      let changeMe = document.getElementsByTagName('p')[1];
+      changeMe.innerHTML = document.getElementsByTagName('p')[0].innerText;
+
     </script>
-    OR
-    <script src="content-1.js"></script> -->
-
-  <script>
-    'use strict';
-
-    // let content = document.querySelectorAll('p');
-    // for (let element = 0; element< content.length;element++) {
-    //   content[element -1]
-    // };
-
-    //console.log(document.getElementsByTagName('p')[0].innerText);
-    let changeMe = document.getElementsByTagName('p')[1];
-    changeMe.innerHTML = document.getElementsByTagName('p')[0].innerText;
-
-  </script>
-</body>
+  </body>
 
 </html>

@@ -1,0 +1,9 @@
+body{
+  font-family: 'Architects Daughter', cursive;
+}
+h1,h2,h3{
+  color:brown;
+}
+ul{  
+  list-style-image:url('images/tiny-coffee-cup.gif');
+}

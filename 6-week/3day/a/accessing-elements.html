@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>DOM: Accessing Elements</title>
+</head>
+
+<body>
+  <div id="b325" class="asteroid">The King</div>
+  <div class="asteroid b326">The Conceited Man</div>
+  <div class="asteroid b328">The Businessman</div>
+  <div class="asteroid b329">The Lamplighter</div>
+
+
+  <script>
+    'use strict';
+    var king = document.getElementById('b325');
+    console.log('king', king);
+    var lamplighter = document.querySelector('.b329');
+    console.log('lamplighter', lamplighter);
+    let businessMan = document.getElementsByClassName('asteroid b328');
+    console.log('Bussinesman',businessMan);
+    let considet = document.querySelector('.b326');
+    console.log('Conceited',considet);
+
+    console.log('-------- with the querySelectorAll ------')
+    var asteroids = document.querySelectorAll('.asteroid');
+    for (let element of asteroids) {
+      console.log(element);
+    }
+  </script>
+</body>
+
+</html>
+
+<!-- keywords : for the ' querySelector ' and ' querySelectorAll ' you can write just part of the file name or tag start with '.'
+ and thats can find the working like the incloudes() for the string. -->

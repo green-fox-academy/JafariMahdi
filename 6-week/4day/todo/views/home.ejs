@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Title</title>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>Title</title>
-</head>
-
-<body>
-  <h1><strong>Thing to do today:</strong></h1>
-  <h3><%= name [0] %></h3>
-  <h3><%= name [1] %></h3>
-  <h3><%= name [2]%></h3>
-</body>
+  <body>
+    <h1><strong>Things to do today:</strong></h1>
+    <ul>
+      <% for (let i = 0; i < todosKey.length; i++) { %>
+      <li><%= todosKey[i] %></li>
+      <% } %>
+    </ul>
+  </body>
 
 </html>

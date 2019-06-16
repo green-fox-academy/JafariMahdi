@@ -11,7 +11,7 @@
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
-
+.README.md
 # End of https://www.gitignore.io/api/visualstudiocode
 
 greenFox/jafari-mahdi/practice
