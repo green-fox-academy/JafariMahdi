@@ -3,8 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>Links</title>
-  </head>
+    <style>
+    a { color: red ; text-decoration:none  }
+    a:visited{ color:green }
+    a:hover{ color:blue  }
 
+    nav ul{ list-style-type: none;  }
+    nav li { display: inline;}
+    nav a,nav a:visited { background-color:rgb(241, 188, 188); color:rgb(225, 231, 228); }
+    nav a:hover { background-color: rgb(25, 235, 155)}
+
+    </style>
+  </head>
   <body>
 
     <h1>Links</h1>
@@ -21,12 +31,13 @@
     <a href="mailto:someone@gmail.com?subject=contact from custumer"> Contact Us</a>
 
     <h1>Navigation Links</h1>
-    <ul>
-    <li>Link 1</li>
-    <li>Link 2</li>
-    <li>Link 3</li>
-    </ul>
-
+    <nav>
+      <ul>
+        <li><a href="other-pages/linked-page1.html">Link 1</a></li>
+        <li><a href="other-pages/linked-page2.html">Link 2</a></li>
+        <li><a href="other-pages/linked-page3.html">Link 3</a></li>
+      </ul>
+  </nav>
 
   </body>
 </html>

@@ -1,34 +1,56 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Tables</title>
+  <meta charset="utf-8">
+  <title>Tables</title>
+  <style>
+  table, td, th{ border: 1px solid red; }
+  td {padding: 30px }
+
+  table{
+    width: 500px; height: 500px; text-align:center; border-spacing: 0 ;
+  }
+  th{ height: 80px;}
+
+  .small-table{ width: 50px; }
+  thead{ background-color: lightblue;}
+  tfoot{ background-color: lightgreen}
+  </style>
 </head>
 
 <body>
+  <h1>Tables</h1>
+  <caption>Table title</caption>
+  <table>
+    <thead>
+      <tr>
+        <th>column 1</th>
+        <th class="small-table">column 2</th>
+        <th>column 3</th>
+      </tr>
+    </thead>
 
-<h1>Tables</h1>
+    <tbody>
+      <tr>
+        <td rowspan="2">data 1-1</td>
+        <td>data 2-1</td>
+        <td>data 3-1</td>
+      </tr>
 
+      <tr>
+        <td>data 2-2</td>
+        <td>data 3-2</td>
+      </tr>
+    </tbody>
 
-column 1
-column 2
-column 3
-
-
-data 1-1
-data 2-1
-data 3-1
-
-
-data 1-2
-data 2-2
-data 3-2
-
-
-total 1
-total 2
-total 3
-
-
+    <tfoot>
+      <tr>
+        <td colspan="2">total 1</td>
+        <td>total 3</td>
+      </tr>
+    </tfoot>
+  </table>
 </body>
+
 </html>
