@@ -18,6 +18,3 @@ class Person {
     }
 }
 export{Person};
-
-// just the example
-const a = 7;

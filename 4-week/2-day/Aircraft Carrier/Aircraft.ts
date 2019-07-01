@@ -1,59 +1,114 @@
-'us estrict ';
+'use strict';
 
-class Aircraft {
-    type: string;
-    ammo_store: number;
-    max_ammo: number;
-    base_damage: number;
+abstract class Aircraft {
+  maxAmmo: number;
+  baseDamage: number;
+  ammo: number;
+  type: string;
 
-    constructor(type: string) {
-        if (type === 'F16') {
-            this.base_damage = 30;
-            this.max_ammo = 8
-        }; if (type === 'F35') {
-            this.base_damage = 50;
-            this.max_ammo = 12;
-        }
-        this.ammo_store = 0;
-        this.type = type;
-    }
+  fight() {
+    let damage = this.baseDamage * this.ammo;
+    this.ammo = undefined
+    return damage
+  }
 
-    fight() {
-        return this.ammo_store * this.base_damage;
-    }
+  refill(fillammo: number) {
+    let needAmmo = this.maxAmmo - this.ammo;
+    this.ammo += needAmmo;
+    let fill = fillammo - this.ammo;
+    return fill
+  }
 
-    refill(refil): any {
-        if (refil > this.max_ammo) {
-            this.ammo_store += this.max_ammo;
-            this.allDamage -= this.max_ammo;
-            console.log(`you can fill just ${this.max_ammo}, 
-            you have now ${request} more `);
-            //`you can fill just ${this.max_ammo}, you have now ${request} more `
-        }
-        this.allDamage += request;
-        return this.allDamage;
-    }
-
-    gettype() {
-        return this.type;
-    }
-
-    getstatus() {
-        return `Type ${this.type},AMMO ${this.ammo_store},Base Damge ${this.base_damage},
-        ${this.allDamage} `
-    }
-
-
-
+  getType() {
+    return this.type
+  }
+  getStatus() {
+    return `Type ${this.type}, Ammo: ${this.ammo}, Base Damage: ${this.baseDamage}, All Damage: ${this.baseDamage * this.ammo}`
+  }
+  isPrioritry(): boolean {
+    return this.type === 'F35' ? true : false;
+  }
+}
+class F16 extends Aircraft {
+  maxAmmo: number = 8;
+  baseDamage: number = 30
+  type: string = 'F16'
+}
+class F35 extends Aircraft {
+  maxAmmo: number = 12;
+  baseDamage: number = 50;
+  type: string = 'F35'
 }
 
-let F37 = new Aircraft("F37", 8, 8, 30);
-console.log(F37);
-F37.refill(15);
-console.log(F37);
-F37.getstatus;
+class Carrier {
+  aircrafts: Aircraft[];
+  carrirStore: number;
+  healthpoint: number;
 
-// --------------------------------------------------
+  constructor(carrierStore: number, healthPoint: number) {
+    this.carrirStore = carrierStore;
+    this.healthpoint = healthPoint;
+    this.aircrafts = [];
+  }
 
+  add(newAirCraft: Aircraft) {
+    this.aircrafts.push(newAirCraft)
+  }
+  fill() {
+    if (this.carrirStore <= 0) {
+      throw new Error(' the store is empty')
+    }
 
+    let allAirCraftNeed: number = undefined;
 
+    this.aircrafts.forEach(craft => {
+      allAirCraftNeed += craft.ammo
+    })
+
+    if (this.carrirStore < allAirCraftNeed) {
+      let makeLine = [];
+      this.aircrafts.forEach(craft => {
+        if (craft.isPrioritry()) { makeLine.unshift(craft) }
+        else { makeLine.push(craft) }
+      })
+      for (let i = 0; i < makeLine.length; i++) {
+        makeLine[i].refill(this.carrirStore);
+      }
+    }
+    else {
+      for (let craft of this.aircrafts) { craft.refill(this.carrirStore) }
+    }
+  }
+
+  carrierDamage(): number {
+    let carrierdamage = undefined;
+    this.aircrafts.forEach(element => {
+      carrierdamage += element.fight();
+    })
+    return carrierdamage;
+  }
+
+  fight(otherCarrier: Carrier) {
+    otherCarrier.healthpoint -= this.carrierDamage();
+    this.healthpoint -= otherCarrier.carrierDamage();
+  }
+
+  getStatus() {
+    if (this.healthpoint <= 0) { return `it's dead Jim, sorry :(` }
+    else {
+      let result = `HP: ${this.healthpoint}, AirCraft Cont: ${this.aircrafts.length}, Ammo Storeg ${this.carrirStore}, Total Damage: ${this.carrierDamage()} `
+      result += '\n AirCrafts:';
+      this.aircrafts.forEach(craft => {
+        result += '\n' + craft.getStatus();
+      })
+      return result
+    }
+  }
+}
+
+let carrier1 = new Carrier(2300, 5000);
+
+carrier1.aircrafts = [new F35, new F35, new F35, new F16, new F16];
+
+carrier1.fill();
+console.log(carrier1.getStatus());

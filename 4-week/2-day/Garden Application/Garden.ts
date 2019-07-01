@@ -1,43 +1,94 @@
-'use strict';
-import { Flower, Tree, plant } from './plant';
 
-class Garden {
-    storePlane: plant[];
-
-    constructor() {
-        this.storePlane = [];
+class Plant {
+    type: string;
+    color: string;
+    waterAmount: number;
+    absorb: number;
+    waterBase: number;
+  
+    constructor(type, color, wateramount, absorb) {
+      this.type = type;
+      this.color = color;
+      this.waterAmount = wateramount;
+      this.absorb = absorb;
+      this.waterBase = 0;
     }
-
-    addToStore(x: plant) {
-        this.storePlane.push(x);
+  
+    needsWater() {
+      return this.waterBase < this.waterAmount
     }
-
-
-    Watering() {
-        this.storePlane.forEach(element => {
-            element.water += 40 * element.absorb;
-        })
+  
+    water(amount) {
+      this.waterBase += amount
     }
-
-}
-
-let myflower = new Flower('blue');
-let myflower2 = new Flower('yellow');
-let mytree = new Tree('purple');
-let mytree2 = new Tree('orange');
-let mygarden = new Garden();
-
-mygarden.addToStore(myflower);
-mygarden.addToStore(myflower2);
-mygarden.addToStore(mytree);
-mygarden.addToStore(mytree2);
-
-mygarden.Watering();
-
-/*
-console.log(mygarden);
-console.log(mygarden.storePlane);
-console.log(mygarden.storePlane[0]);
-console.log(mygarden.storePlane[0].color);
-console.log(mygarden.storePlane[0].needWater());*/
-
+  }
+  
+  class Flower extends Plant {
+    constructor(type, color) {
+      super('flower', color, 5, 0.75);
+    }
+  }
+  
+  class Tree extends Plant {
+    constructor(type, color) {
+      super('tree', color, 10, 0.4);
+    }
+  }
+  
+  class Garden {
+    plants: Plant[] = [];
+  
+    add(someplant) {
+      this.plants.push(someplant);
+    }
+  
+    watring(amount) {
+      let whoNeedWater = [];
+  
+      for (let plant of this.plants) {
+        if (plant.waterBase < plant.waterAmount) {
+          whoNeedWater.push(plant)
+        }
+      }
+  
+      let dividingWater = amount / whoNeedWater.length;
+      for (let plant of whoNeedWater) {
+        plant.waterBase += (dividingWater * plant.absorb)
+      }
+  
+      for (let plant of this.plants) {
+        if (plant.waterBase < plant.waterAmount) {
+          console.log(`The ${plant.color} ${plant.type} needs water`);
+        }
+        else {
+          console.log(`The ${plant.color} ${plant.type} dosn't need water`);
+        }
+      }
+    }
+  }
+  
+  let redGarden = new Garden();
+  
+  let yellow = new Flower('flower', 'yellow');
+  redGarden.add(yellow);
+  let blue = new Flower('flower', 'blue');
+  redGarden.add(blue);
+  
+  let purple = new Tree('Tree', 'purple');
+  redGarden.add(purple);
+  let orange = new Tree('Tree', 'orange');
+  redGarden.add(orange);
+  
+  redGarden.watring(0);
+  console.log('----- Watring with 40 ------');
+  redGarden.watring(40);
+  console.log('---- Watring with 70 ------');
+  redGarden.watring(70);
+  //console.log(redGarden);
+  
+  
+  // vaghti classi ra extands mikonid niyazi nist dobareh field bedahid bedahid faghat dar constructoer sedayesh konid
+  // dar klass akhar hatman method add bedahid ta rahatar beshavad push kard objectha ro 
+  
+  
+  
