@@ -13,9 +13,9 @@ let xSize = 300;
 let ySize = 200;
 
 for (let i = 0; i < 8; i++) {
-  
-        for (let j = 0; j <= i; j++) {
-            Tringle(xSize + j * 50, ySize);
+
+    for (let j = 0; j <= i; j++) {
+        Tringle(xSize + j * 50, ySize);
     }
 
     xSize -= 25;

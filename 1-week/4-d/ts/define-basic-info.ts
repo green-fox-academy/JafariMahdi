@@ -1,6 +1,5 @@
 'use strict ';
 
-// Define several things as a variable, then print their values 
 
 let Name :String = 'mahdi';
 let age: number = 31;

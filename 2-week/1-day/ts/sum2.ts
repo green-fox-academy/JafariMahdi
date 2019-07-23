@@ -1,6 +1,4 @@
-// -  Write a function called `sum` that sum all the numbers until the given parameter
-// -  The function should return the result
-
+'use strict';
 let list: number[] = [12, 3, 5, 6, 8, 9];
 
 function sum2(list: number[], until) {

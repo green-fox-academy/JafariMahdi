@@ -1,10 +1,8 @@
 'use strict';
-
-
 export class Bicycle {
-   cadence: number;
-   gear: number;
-   speed: number;
+    cadence: number;
+    gear: number;
+    speed: number;
 }
 
 export class FamilyMember {

@@ -7,8 +7,6 @@ const students: any[] = [
   { name: 'Pierce', age: 12, candies: 7 },
   { name: 'Sean', age: 10, candies: 1 }
 ];
-// create a function that takes a list of students and logs:
-// - Who has got more candies than 4 candies
 
 function more(list: any[]) {
   list.forEach(value => {
@@ -20,8 +18,6 @@ function more(list: any[]) {
 more(students);
 console.log('------------------------');
 
-// create a function that takes a list of students and logs: 
-//  - how many candies they have on average
 
 let allCandies: number = 0;
 

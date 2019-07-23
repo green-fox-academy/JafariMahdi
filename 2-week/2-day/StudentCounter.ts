@@ -9,9 +9,6 @@ const students: any[] = [
     { name: 'George', age: 10, candies: 1 }
 ];
 
-// create a function that takes a list of students and logs: 
-// - How many candies are owned by students altogether
-
 function student(list: any[]): any {
     let candiesbox: number = 0;
     list.forEach(value => {
@@ -22,9 +19,6 @@ function student(list: any[]): any {
 }
 console.log(student(students));
 console.log('---------------------------------');
-
-// create a function that takes a list of students and logs:
-// - The sum of the age of people who have less than 5 candies
 
 let ages: number = 0;
 function sumage(list: any[]) {

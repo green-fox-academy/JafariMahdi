@@ -8,7 +8,6 @@ if (a === 8) {
   console.log('Yaaay! The value of the \'a\' variable is 8'); // This block will NOT run
 }
 
-
 let b: number = 20;
 
 if (b < 10) {

@@ -10,10 +10,10 @@
 //  John Doe
 //  31
 //  1.87
-let myname : string ='Jafari Mahdi';
-let age : number = 32;
-let height:any = 1.82;
+let m_name: string = 'Jafari Mahdi';
+let age: number = 32;
+let height: any = 1.82;
 
-console.log(myname);
+console.log(m_name);
 console.log(age);
 console.log(height);

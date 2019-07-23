@@ -8,7 +8,7 @@ export class Usable {
   }
 
   public use(): void {
-   this.status = 'Now, I was used at least once.';
+    this.status = 'Now, I was used at least once.';
   }
 }
 

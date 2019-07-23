@@ -3,10 +3,6 @@
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
-// DO NOT TOUCH THE CODE ABOVE THIS LINE
-
-// Fill the canvas with a checkerboard pattern.
-
 let x: number = 0;
 let y: number = 0;
 let c: number = 50;
@@ -14,7 +10,7 @@ let d: number = 50;
 
 function drawing() {
     ctx.fillStyle = 'black';            //make function for one square with black color
-    ctx.fillRect(x, y, c, d);       
+    ctx.fillRect(x, y, c, d);
     x += 100;
 }
 function drawing1() {
@@ -25,16 +21,18 @@ function drawing1() {
 
 for (let i = 0; i <= 7; i++) {  // for loop for drawing in hight
     if (i % 2 === 0) {          // make if to choice start with black or space for each line
-        for (let b = 0; b <= 5; b++) {                  
+        for (let b = 0; b <= 5; b++) {
             drawing();
-        } }                             // for drawing in width
+        }
+    }                             // for drawing in width
     else {
         for (let c = 0; c <= 5; c++) {
 
             drawing1();                 // for drawing in width
-    }   }
-           x = 0;   //make x again 0 to start from the beginig width  IMPORTANT
-           y += 50; //make y or high bigger for going down and not repet in one line just IMPORTANT
+        }
+    }
+    x = 0;   //make x again 0 to start from the beginig width  IMPORTANT
+    y += 50; //make y or high bigger for going down and not repet in one line just IMPORTANT
 }
 
 

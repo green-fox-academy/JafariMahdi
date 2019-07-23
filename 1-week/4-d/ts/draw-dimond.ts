@@ -1,18 +1,5 @@
 'use strict';
 
-// Write a program that draws a
-// diamond like this:
-//
-//    *
-//   ***
-//  *****
-// *******
-//  *****
-//   ***
-//    *
-//
-// The diamond should have as many lines as lineCount is
-
 let star: string = '';
 let space: string = '';
 
@@ -30,12 +17,12 @@ for (let i = 0; i < 4; i++) {
     space = '';
 }
 
-star ='';           // always code runing from the top. here we make star again 0 for the next part of dimond
-space = ''; 
+star = '';           // always code runing from the top. here we make star again 0 for the next part of dimond
+space = '';
 
-for (let a = 1; a <= 3 ; a++) {
+for (let a = 1; a <= 3; a++) {
 
-    for (let y = 6; y > (a*2)-1; y--) {
+    for (let y = 6; y > (a * 2) - 1; y--) {
         star += '*';
     }
     space += ' ';
