@@ -26,4 +26,7 @@ Basic of Programing in TypeScript
 | ------:|:------------------------------------------------
 | Day -1 | [Training/Dojo]
 | Day -2 | [File IO](https://github.com/green-fox-academy/JafariMahdi/tree/master/3-week/2-day)
-| Day -3 | [File IO](https://github.com/green)
+| Day -3 | [Class & Object](https://github.com/green-fox-academy/JafariMahdi/tree/master/3-week/3-day)
+| Day -4 | [Recursion](https://github.com/green-fox-academy/JafariMahdi/tree/master/3-week/4-day)
+
+
