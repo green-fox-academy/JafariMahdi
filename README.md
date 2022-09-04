@@ -42,3 +42,14 @@ Basic of Programing in TypeScript
 
 
 
+
+| Week -6 | Layout, DOM and Backend |
+| ------:|:------------------------------------------------
+| Day -1 | [CSS Layout](https://github.com/green-fox-academy/JafariMahdi/tree/master/6-week/1-day)
+| Day -2 | [SQL](https://github.com/green-fox-academy/JafariMahdi/tree/master/6-week/2day)
+| Day -3 | [DOM](https://github.com/green-fox-academy/JafariMahdi/tree/master/6-week/3day)
+| Day -4 | [Server Side Basics & Templating](https://github.com/green-fox-academy/JafariMahdi/tree/master/6-week/4day)
+| Day -5 | Practice 
+
+
+
